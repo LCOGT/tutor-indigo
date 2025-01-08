@@ -1,11 +1,30 @@
 /////////////////// General
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Unica+One&display=swap');
+
+$font-stack: "Noto Sans", sans-serif;
+$font-headers: 'Unica One', sans-serif;
 
 $content_padding_top: 24px;
 $content-padding-bottom: 10px;
 $header-height: 75px;
 $footer-height: 125.5px;
-body, h1, h2, h3, h4, h5, h6, p, label, button {
-  font-family: $font-family-title !important;
+body, p, label, button {
+  font-family: $font-stack !important;
+  color: $off-white;
+}
+
+.hd-1,
+.hd-2,
+.hd-3,
+.hd-4,
+.hd-5,
+.hd-6,
+.hd-7,
+.hd-8,
+h1, h2, h3, h4, h5, h6 {
+  color: $off-white;
+  text-transform: uppercase;
+  font-family: $font-headers !important;
 }
 html {
   background: transparent !important;
@@ -45,8 +64,12 @@ input:-webkit-autofill:active{
   font-family: $font-family-title;
 }
 
-h1, h2, h3, h1 span, h2 span, h3 span, .nav-item {
+h1, h2, h3, h1 span, h2 span, h3 span {
   font-family: $font-family-title;
+}
+
+.nav-item {
+  font-family: $font-stack;
 }
 
 // It is necessary to specify `:not(.courseware) >` in order to not affect the style
@@ -60,9 +83,6 @@ h1, h2, h3, h1 span, h2 span, h3 span, .nav-item {
   min-height: calc(100vh - #{$header-height + $content-padding-top + $content-padding-bottom + $footer-height}); // sticky footer
 }
 
-////////////////// Fonts
-@import "fonts";
-
 /////////////////// Register/Sign in header
 header.global-header {
   @include media-breakpoint-up(lg) {
@@ -71,7 +91,8 @@ header.global-header {
     z-index: 200; // necessary to keep the header on top of other elements
     overflow: visible;  // fix for Safari
   }
-  //background-color: #4c61bf;
+  background-color: $dark;
+  color: $off-white;
   box-shadow: none;
 }
 
@@ -95,7 +116,7 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
 /////////////////// Home page
 .home header {
   box-shadow: none;
-  background-color: #fff;
+  background-color: $dark;
 }
 
 .home > header .title {
@@ -133,6 +154,11 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
       margin-right: 20px;
     }
   }
+
+}
+
+.courses-container .courses .courses-listing li .course .course-info {
+  font-family: $font-stack;
 }
 
 ////////////////// User dashboard /dashboard
@@ -161,6 +187,7 @@ nav.wrapper-preview-menu {
 }
 
 .course-info {
+  font-family: $font-stack;
   .container {
     padding-bottom: 0;
   }
@@ -185,7 +212,7 @@ nav.wrapper-preview-menu {
 
 /////////////////// Course search
 .find-courses, .university-profile {
-  background-color: #fff;
+  background-color: $light-dark;
 }
 
 /////////////////// User profile
@@ -216,6 +243,10 @@ nav.wrapper-preview-menu {
 .wrapper-footer {
   box-shadow: none;
   padding: 25px 40px;
+  border-top: none;
+  background: $dark;
+  clear: both;
+
 
   .wrapper-logo {
       display: none;
@@ -267,7 +298,7 @@ nav.wrapper-preview-menu {
     padding: 30px 0;
     font-size: 16px;
     line-height: 24px;
-    color: #515661;
+    color: $off-white;
     h1 {
       font-size: 24px;
       font-weight: 700;
@@ -792,7 +823,7 @@ body.indigo-dark-theme {
     scrollbar-color: $text-color-d $body-bg-d;
   }
   .find-courses, .university-profile {
-    background-color: $body-bg-d;
+    background-color: transparent;
   }
   .ui-state-default,
   .ui-widget-content
@@ -1525,6 +1556,45 @@ body.indigo-dark-theme {
   } 
 
 }
+
+/* Highlight boxes */
+
+section.highlight {
+  background-color: $grey-level1;
+  padding: 100px;
+}
+
+.card {
+  background-color: $grey-level2;
+  border-radius: 0.5rem;
+}
+
+.highlight-title {
+  color: #fcfcfc;
+  font-family: 'Unica One', sans-serif;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  padding: 0.5em 0;
+}
+
+.highlight-box {
+  background-color: #262e35;
+  text-align: center;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  display: inline-block;
+  width: 100%;
+}
+
+svg.icon-highlight {
+  font-size: 3rem;
+  path {
+    fill: $blue;
+  }
+}
+
+
 @import '../../../extra/footer';
 @import '../../../extra/header';
 @import '../../../dashboard/dashboard';

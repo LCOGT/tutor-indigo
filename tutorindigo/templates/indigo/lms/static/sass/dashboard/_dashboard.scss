@@ -6,6 +6,7 @@
     @include media-breakpoint-up(lg) {
         margin-top: 64px !important;
     }
+    background-color: $light-dark;
 }
 .sidebar-notification.add {
     background: #FFFBEB;

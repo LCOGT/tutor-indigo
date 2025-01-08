@@ -137,4 +137,21 @@ This Tutor plugin is maintained by Hina Khadim from `Edly <https://edly.io>`__. 
 License
 -------
 
-This work is licensed under the terms of the `GNU Affero General Public License (AGPL) <https://github.com/overhangio/tutor-indigo/blob/release/LICENSE.txt>`_.
+This work is licensed under the terms of the `GNU Affero General Public License (AGPL) <https://github.com/overhangio/tutor-indigo/blob/master/LICENSE.txt>`_.
+
+Development
+-----------
+
+To change the logo and favicon you need to replace the files as detailed above and run the following:
+
+    ```bash
+    pip install -e ./tutor-indigo
+    tutor plugins enable indigo
+    tutor dev start
+    ```
+
+In another window, run the following each time you make a change to the sass files:
+
+    tutor config save
+
+This will watch for changes in the sass files and compile them to css. You can now make changes to the sass files and see the changes in the browser.

@@ -43,15 +43,14 @@ header.global-header {
             margin: 0 0 0 38px;
             .nav-tab {
                 a {
-                    font-size: 14px;
                     font-weight: 500;
                     line-height: 22px;
                     padding: 20px 0;
-                    color: $light-dark;
+                    color: $off-white;
                     margin: 0 16px 0 0;
                     border-bottom: 2px solid transparent;
                     &.active, &:hover {
-                        color: $dark;
+                        color: $off-white;
                         border-bottom: 2px solid $primary;
                     }
                 }
@@ -63,7 +62,6 @@ header.global-header {
             justify-content: end;
             .toggle-user-dropdown {
                 padding: 9px 15px;
-                background: $primary-light;
                 color: $primary;
                 font-size: 14px;
                 font-weight: 500;
@@ -248,7 +246,7 @@ header.global-header {
 
 
 body.indigo-dark-theme {
-    background: $body-bg-d !important;
+    background: $dark !important;
     color: $text-color-d !important;
     .window-wrap {
         background: $body-bg-d;
@@ -274,8 +272,7 @@ body.indigo-dark-theme {
         }
     }
     header.global-header {
-        background: $body-bg-d;
-        box-shadow: 0px 1px 2px 0px rgba(255, 255, 255, 0.8), 0px 1px 3px 0px rgba(255, 255, 255, 0.1);
+        background: $dark;
         .nav-links {
             .main {
                 .nav-tab {
