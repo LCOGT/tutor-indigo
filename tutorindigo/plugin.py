@@ -21,9 +21,9 @@ config: t.Dict[str, t.Dict[str, t.Any]] = {
     # Add here your new settings
     "defaults": {
         "VERSION": __version__,
-        "WELCOME_MESSAGE": "The place for all your online learning",
+        "WELCOME_MESSAGE": "We keep you in the dark",
         "PRIMARY_COLOR": "#15376D",  # Indigo
-        "ENABLE_DARK_TOGGLE": True,
+        "ENABLE_DARK_TOGGLE": False,
         # Footer links are dictionaries with a "title" and "url"
         # To remove all links, run:
         # tutor config save --set INDIGO_FOOTER_NAV_LINKS=[]
@@ -121,7 +121,7 @@ hooks.Filters.ENV_PATCHES.add_items(
            
 RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
 RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@^3.2.2'
-RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.2.2'
+RUN npm install '@edx/brand@git+https://github.com/zemogle/brand-openedx.git#main'
 
 """,
         )
@@ -133,7 +133,7 @@ RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.2.2'
 hooks.Filters.ENV_PATCHES.add_item(
     (
         "mfe-dockerfile-post-npm-install-authn",
-        "RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.2.2'",
+        "RUN npm install '@edx/brand@git+https://github.com/zemogle/brand-openedx.git#main'",
     )
 )
 
@@ -187,6 +187,38 @@ for path in glob(
     with open(path, encoding="utf-8") as patch_file:
         hooks.Filters.ENV_PATCHES.add_item((os.path.basename(path), patch_file.read()))
 
+
+# for mfe in indigo_styled_mfes:
+#     PLUGIN_SLOTS.add_item(
+#         (
+#             mfe,
+#             "footer_slot",
+#             """ 
+#             {
+#                 op: PLUGIN_OPERATIONS.Hide,
+#                 widgetId: 'default_contents',
+#             },
+#             {
+#                 op: PLUGIN_OPERATIONS.Insert,
+#                 widget: {
+#                     id: 'default_contents',
+#                     type: DIRECT_PLUGIN,
+#                     priority: 1,
+#                     RenderWidget: <IndigoFooter />,
+#                 },
+#             },
+#             {
+#                 op: PLUGIN_OPERATIONS.Insert,
+#                 widget: {
+#                     id: 'read_theme_cookie',
+#                     type: DIRECT_PLUGIN,
+#                     priority: 2,
+#                     RenderWidget: AddDarkTheme,
+#                 },
+#             },
+#   """,
+#         ),
+#     )
 
 for mfe in indigo_styled_mfes:
     PLUGIN_SLOTS.add_item(
