@@ -11,8 +11,8 @@ $grey-level4: #13181D;
 
 // Theme fonts
 $font-family-title: 'Unica One', sans-serif;
-$serif: "Noto Sans", sans-serif;
-$f-sans-serif: "Noto Sans", sans-serif;
+$serif: "Quattrocento Sans", sans-serif;
+$f-sans-serif: "Quattrocento Sans", sans-serif;
 
 // Initialize the Open edX Bootstrap theme
 @import 'edx-bootstrap/sass/open-edx/theme';
@@ -23,7 +23,7 @@ $f-sans-serif: "Noto Sans", sans-serif;
 $dark: $grey-level4; // Header and footer only
 $light-dark: $grey-level3; // body background color
 $big-screen: 1200px;
-$body-background: $grey-level1;
+$body-background: $grey-level3;
 $header-size1: 2.5rem;
 $header-size2: 1.9rem;
 $header-size3: 1.25rem;

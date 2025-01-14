@@ -24,6 +24,7 @@ config: t.Dict[str, t.Dict[str, t.Any]] = {
         "WELCOME_MESSAGE": "We keep you in the dark",
         "PRIMARY_COLOR": "#15376D",  # Indigo
         "ENABLE_DARK_TOGGLE": False,
+        "INDIGO_ENABLE_DARK_THEME":True,
         # Footer links are dictionaries with a "title" and "url"
         # To remove all links, run:
         # tutor config save --set INDIGO_FOOTER_NAV_LINKS=[]
