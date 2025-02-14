@@ -122,7 +122,7 @@ hooks.Filters.ENV_PATCHES.add_items(
            
 RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
 RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@^3.2.2'
-RUN npm install '@edx/brand@git+https://github.com/zemogle/brand-openedx.git#main'
+RUN npm install '@edx/brand@git+https://github.com/LCOGT/brand-openedx.git#main'
 
 """,
         )
@@ -134,7 +134,7 @@ RUN npm install '@edx/brand@git+https://github.com/zemogle/brand-openedx.git#mai
 hooks.Filters.ENV_PATCHES.add_item(
     (
         "mfe-dockerfile-post-npm-install-authn",
-        "RUN npm install '@edx/brand@git+https://github.com/zemogle/brand-openedx.git#main'",
+        "RUN npm install '@edx/brand@git+https://github.com/LCOGT/brand-openedx.git#main'",
     )
 )
 
