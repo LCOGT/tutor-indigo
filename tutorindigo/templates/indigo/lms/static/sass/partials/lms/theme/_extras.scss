@@ -8,6 +8,11 @@ $content_padding_top: 24px;
 $content-padding-bottom: 10px;
 $header-height: 75px;
 $footer-height: 125.5px;
+
+html {
+  background-color: $light-dark !important;
+}
+
 body, p, label, button {
   font-family: $font-stack !important;
   color: $off-white;
@@ -22,13 +27,11 @@ body, p, label, button {
 .hd-7,
 .hd-8,
 h1, h2, h3, h4, h5, h6 {
-  color: $off-white;
+  color: $off-white !important;
   text-transform: uppercase;
   font-family: $font-headers !important;
 }
-html {
-  background: transparent !important;
-}
+
 body, body.view-profile {
   min-height: initial;
   background-color: #fff;
@@ -36,6 +39,12 @@ body, body.view-profile {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
+
+body.view-in-course {
+  color: $off-white;
+  background-color: $light-dark !important;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
@@ -166,6 +175,10 @@ header.global-header .nav-links .secondary .dropdown-user-menu {
   padding: initial;
 }
 
+a.course-card-title {
+  font-family: $font-family-title;
+}
+
 ////////////////// "View this course as staff/learner/..."
 nav.wrapper-preview-menu {
     // It is necessary to specify `nav` in order to override the common higher priority rule
@@ -209,6 +222,23 @@ nav.wrapper-preview-menu {
   }
 }
 
+/////////////////// Learning MFE
+
+.xmodule_display.xmodule_AboutBlock ol, 
+.xmodule_display.xmodule_AboutBlock ul, 
+.xmodule_display.xmodule_CourseInfoBlock ol, 
+.xmodule_display.xmodule_CourseInfoBlock ul, 
+.xmodule_display.xmodule_HtmlBlock ol, 
+.xmodule_display.xmodule_HtmlBlock ul, 
+.xmodule_display.xmodule_StaticTabBlock ol, 
+.xmodule_display.xmodule_StaticTabBlock ul,
+.xmodule_display.xmodule_AboutBlock p, 
+.xmodule_display.xmodule_CourseInfoBlock p, 
+.xmodule_display.xmodule_HtmlBlock p, 
+.xmodule_display.xmodule_StaticTabBlock p {
+    color: $off-white !important;
+    font-size: 1.2em !important;
+}
 
 /////////////////// Course search
 .find-courses, .university-profile {
