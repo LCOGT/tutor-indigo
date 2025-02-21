@@ -1600,6 +1600,8 @@ section.highlight {
   border-radius: 0.5rem;
 }
 
+// Highlight box styles
+
 .highlight-title {
   color: #fcfcfc;
   font-family: 'Unica One', sans-serif;
@@ -1611,6 +1613,15 @@ section.highlight {
 .highlight-box {
   background-color: #262e35;
   text-align: center;
+}
+
+.highlight-box-grey {
+  color: $off-white;
+  background-color: $grey-level2 !important;
+  border-radius: 8px;
+  border: $red;
+  padding: 24px 16px 10px 16px;
+  margin: 0 0 20px;
 }
 
 [class^="icon-"], [class*=" icon-"] {
