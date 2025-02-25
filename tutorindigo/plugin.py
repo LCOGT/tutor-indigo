@@ -142,6 +142,14 @@ hooks.Filters.ENV_PATCHES.add_item(
 
 hooks.Filters.ENV_PATCHES.add_items(
     [
+# Stop email activation because emails are not working
+       ( "openedx-common-settings",
+        """
+        FEATURE['SKIP_EMAIL_VALIDATION'] = True,
+        FEATURES['ALWAYS_REDIRECT_HOMEPAGE_TO_DASHBOARD_FOR_AUTHENTICATED_USER'] = False,
+        FEATURES['ENABLE_THIRD_PARTY_AUTH'] = False,
+        """,
+       ),
         # for production
         (
             "openedx-common-assets-settings",
