@@ -146,7 +146,7 @@ hooks.Filters.ENV_PATCHES.add_items(
        ( 
            "openedx-common-settings",
         """
-FEATURE['SKIP_EMAIL_VALIDATION'] = True,
+FEATURES['SKIP_EMAIL_VALIDATION'] = True,
 FEATURES['ALWAYS_REDIRECT_HOMEPAGE_TO_DASHBOARD_FOR_AUTHENTICATED_USER'] = False,
 FEATURES['ENABLE_THIRD_PARTY_AUTH'] = False,
 """,
